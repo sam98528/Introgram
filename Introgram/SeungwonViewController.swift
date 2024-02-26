@@ -17,6 +17,7 @@ class SeungwonViewController: UIViewController {
         textLabel.layer.cornerRadius = textLabel.frame.size.height / 2
         textLabel.layer.borderWidth = 2.0
         textLabel.layer.borderColor = UIColor.white.cgColor
+        print("test")
         // Do any additional setup after loading the view.
     }
     
