@@ -23,6 +23,7 @@ class FeedTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        print("TT")
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.layer.borderWidth = 1
         profileImageView.clipsToBounds = true
