@@ -97,24 +97,42 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         let selectedCellIndex = indexPath.item
 
 
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SeungwonViewController") as? SeungwonViewController else { return }
-            nextVC.modalPresentationStyle = .overFullScreen
-            nextVC.modalTransitionStyle = .coverVertical
-            self.present(nextVC, animated: true, completion: nil)
         
-        /*
+        
         switch selectedCellIndex {
         case 0:
-            
+            guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SeungwonViewController") as? SeungwonViewController else { return }
+                nextVC.modalPresentationStyle = .overFullScreen
+                nextVC.modalTransitionStyle = .coverVertical
+                self.present(nextVC, animated: true, completion: nil)
         case 1:
-            // 두 번째 셀을 선택한 경우의 동작
-            // 원하는 뷰를 열거나 필요한 로직을 수행하세요.
-            break
-        // 다른 셀들에 대한 동작을 추가로 처리할 수 있습니다.
+            guard let nextVC = self.storyboard?.instantiateViewController(identifier: "NaYeonViewController") as? NaYeonViewController else { return }
+                nextVC.modalPresentationStyle = .overFullScreen
+                nextVC.modalTransitionStyle = .coverVertical
+                self.present(nextVC, animated: true, completion: nil)
+        case 2:
+            guard let nextVC = self.storyboard?.instantiateViewController(identifier: "JuHyunViewController") as? JuHyunViewController else { return }
+                nextVC.modalPresentationStyle = .overFullScreen
+                nextVC.modalTransitionStyle = .coverVertical
+                self.present(nextVC, animated: true, completion: nil)
+        case 3:
+            guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MinHeeViewController") as? MinHeeViewController else { return }
+                nextVC.modalPresentationStyle = .overFullScreen
+                nextVC.modalTransitionStyle = .coverVertical
+                self.present(nextVC, animated: true, completion: nil)
+        case 4:
+            guard let SeunghyeonVC = self.storyboard?.instantiateViewController(identifier: "SeunghyeonViewController") as? SeunghyeonViewController else {
+                return;
+            }
+            SeunghyeonVC.modalPresentationStyle = .overFullScreen; // 전체화면으로
+            SeunghyeonVC.modalTransitionStyle = .coverVertical  // 세로방향으로 애니메이션
+            self.present(SeunghyeonVC, animated: true, completion: nil);
+            
+            break;
         default:
             break
         }
-         */
+         
     }
 
 }
