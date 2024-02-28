@@ -16,6 +16,7 @@ class FeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var feedTextLabel: UILabel!
     
+    @IBOutlet weak var heartImageView: UIImageView!
     static let identifier = "FeedTableViewCell"
     
     static func nib() -> UINib {
@@ -23,7 +24,6 @@ class FeedTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("TT")
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.layer.borderWidth = 1
         profileImageView.clipsToBounds = true
@@ -38,10 +38,34 @@ class FeedTableViewCell: UITableViewCell {
                 print("App switched to dark mode")
             }
         })
-        
-        highlightText(text: "E4I1_Official")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
+        feedImageView.isUserInteractionEnabled = true
+        tapGesture.numberOfTapsRequired = 2
+        feedImageView.addGestureRecognizer(tapGesture)
     }
+    @objc func imageViewTapped(_ sender: UITapGestureRecognizer) {
+        let str = likesLabel.text!
+        let numbers = str.components(separatedBy: CharacterSet.decimalDigits.inverted)
+        let result = numbers.joined()
 
+                
+        if heartImageView.image == UIImage(systemName: "heart.fill") {
+            heartImageView.image = UIImage(systemName: "heart")
+            heartImageView.tintColor = UIColor.black
+            if let intValue = Int(result) {
+                likesLabel.text = "좋아요 \(intValue-1)개"
+            }
+            
+        }else{
+            heartImageView.image = UIImage(systemName: "heart.fill")
+            heartImageView.tintColor = UIColor.systemPink
+            if let intValue = Int(result) {
+                likesLabel.text = "좋아요 \(intValue+1)개"
+            }
+        }
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -57,7 +81,7 @@ class FeedTableViewCell: UITableViewCell {
            let range = (feedTextLabel.text as NSString?)?.range(of: text)
            
            if let range = range {
-               //attributedText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: feedTextLabel.font.pointSize), range: range)
+               attributedText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: feedTextLabel.font.pointSize), range: range)
                attributedText.addAttribute(.foregroundColor, value: UIColor.red, range: range)
                feedTextLabel.attributedText = attributedText
            }

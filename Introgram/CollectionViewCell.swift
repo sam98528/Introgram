@@ -12,16 +12,17 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
+    override func layoutSubviews() {
+            super.layoutSubviews()
+            
+            imageView.layer.cornerRadius = imageView.bounds.width / 2
+            imageView.clipsToBounds = true
+        }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        imageView.layer.cornerRadius = imageView.frame.height/2
-        //imageView.layer.borderWidth = 5
-        imageView.clipsToBounds = true
-        //imageView.layer.borderColor = UIColor.blue.cgColor
         
-        let rainbowCircle = RainbowCircle(frame: imageView.bounds, lineHeight: 1.5)
+        let rainbowCircle = RainbowCircle(frame: imageView.bounds, lineHeight: 2)
         rainbowCircle.setNeedsDisplay()
         rainbowCircle.layer.displayIfNeeded()
         imageView.layer.addSublayer(rainbowCircle.layer)

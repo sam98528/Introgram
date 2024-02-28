@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var line: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     let profileList = Profile.data
@@ -49,17 +51,20 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         cell.feedImageView.image = UIImage(named: tartget.imageName)
         cell.likesLabel.text = "좋아요 \(tartget.likes)개"
         cell.feedTextLabel.text = tartget.text
-        highlightText(text: "E4I1_Official", inLabel: cell.feedTextLabel)
-        highlightText(text: "\(String(tartget.likes))", inLabel: cell.likesLabel)
+        highlightText(text: "I4E1_Official", inLabel: cell.feedTextLabel, shouldHighlight: true)
         
-        func highlightText(text: String, inLabel label: UILabel) {
+        func highlightText(text: String, inLabel label: UILabel, shouldHighlight: Bool) {
             let attributedText = NSMutableAttributedString(string: label.text ?? "")
             let range = (label.text as NSString?)?.range(of: text)
             
             if let range = range {
-                attributedText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: label.font.pointSize), range: range)
-                label.attributedText = attributedText
-            }
+                    if shouldHighlight {
+                        attributedText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: label.font.pointSize), range: range)
+                    } else {
+                        attributedText.removeAttribute(.font, range: range)
+                    }
+                    label.attributedText = attributedText
+                }
         }
         
         return cell
@@ -78,6 +83,9 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         let tartget = profileList[indexPath.row]
         cell.nameLabel.text = tartget.name
         cell.imageView.image = UIImage(named: tartget.image)
+        
+        
+        
         return cell
         
     }
@@ -86,7 +94,7 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         return CGSize(width: size, height: size)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-            return 20
+            return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

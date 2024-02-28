@@ -17,11 +17,12 @@ struct Feed {
 
 extension Feed {
     static var data = [
-        Feed(writer: "E4I1_Official", writerImage: "김민희", imageName: "이승원", likes: 10, text: "E4I1_Official: LabeldsadasdasdasdasdadadaLabelds adasdasdasdasdadadaLabeldsadas dasdasdasdadadaLabeldsadasdasdasdasdadad aLabeldsadasdasdasdasdadadaLabeldsadasdasdasdasdadada"),
-        Feed(writer: "E4I1_Official", writerImage: "이승원", imageName: "이승원", likes: 10, text: "E4I1_Official: 안녕하세요 저희는 팀입니다."),
-        Feed(writer: "E4I1_Official", writerImage: "김민희", imageName: "이승원", likes: 10, text: "E4I1_Official: 테스트입니다"),
-        Feed(writer: "E4I1_Official", writerImage: "김민희", imageName: "이승원", likes: 10, text: "E4I1_Official: 테스트입니다"),
-        //Feed(writer: "이승원", writerImage: "이승원", imageName: "", likes: 10, text: "테스트입니다")
+        
+        Feed(writer: "I4E1_Official", writerImage: "I4E1", imageName: "feed1", likes: 999, text: "I4E1_Official: 안녕하세요 저희는 I4E1팀입니다."),
+        Feed(writer: "I4E1_Official", writerImage: "I4E1", imageName: "I4E1", likes: 999, text: "I4E1_Official: LabeldsadasdasdasdasdadadaLabelds adasdasdasdasdadadaLabeldsadas dasdasdasdadadaLabeldsadasdasdasdasdadad aLabeldsadasdasdasdasdadadaLabeldsadasdasdasdasdadada"),
+        Feed(writer: "I4E1_Official", writerImage: "I4E1", imageName: "feed2", likes: 827, text: "I4E1_Official: 테스트입니다"),
+        Feed(writer: "I4E1_Official", writerImage: "I4E1", imageName: "feed3", likes: 123, text: "I4E1_Official: 테스트입니다"),
+        Feed(writer: "I4E1_Official", writerImage: "I4E1", imageName: "feed4", likes: 333, text: "I4E1_Official:테스트입니다")
 
     ]
 }
