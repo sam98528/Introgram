@@ -26,7 +26,7 @@ class SeungwonViewController: UIViewController {
      "mbti": "INTJ",
      "blog": "https://velog.io/@sam98528/posts",
      "github": "https://github.com/sam98528",
-     "sentence": "하기 싫은걸 해야,\n하고 싶은걸 한다."];
+     "sentence": "하기 싫은 걸 해야,\n하고 싶은 걸 한다."];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class SeungwonViewController: UIViewController {
         sentence.text = profile_1["sentence"];
         
 
-        changeTextColor(text: "하고 싶은걸", inLabel: sentence, color: UIColor.red)
+        changeTextColor(text: "하고 싶은 걸", inLabel: sentence, color: UIColor.red)
         
         func changeTextColor(text: String, inLabel label: UILabel, color: UIColor) {
             let attributedText = NSMutableAttributedString(string: label.text ?? "")
