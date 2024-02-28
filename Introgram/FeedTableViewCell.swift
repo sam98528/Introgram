@@ -7,23 +7,58 @@
 
 import UIKit
 
-class FeedTableViewCell: UITableViewCell {
+class FeedTableViewCell: UITableViewCell , UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    
+    //타입을 피드로
+    var feed : Feed?
+    
+    // CollectionView
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (feed?.imageName.count)!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedPhotoCollectionViewCell.identifier, for: indexPath) as! FeedPhotoCollectionViewCell
+        let target = feed?.imageName[indexPath.row]
+        cell.feedImageView.image = UIImage(named: target!)
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.frame.size.width
+        return CGSize(width: size, height: size)
+    }
 
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var feedImageView: UIImageView!
     @IBOutlet weak var likesLabel: UILabel!
-
+    @IBOutlet var feedCollectionView: UICollectionView!
+    
     @IBOutlet weak var feedTextLabel: UILabel!
     
     @IBOutlet weak var heartImageView: UIImageView!
+    
     static let identifier = "FeedTableViewCell"
     
     static func nib() -> UINib {
         return UINib(nibName: "FeedTableViewCell", bundle: nil)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        feedCollectionView.register(FeedPhotoCollectionViewCell.nib(), forCellWithReuseIdentifier: FeedPhotoCollectionViewCell.identifier)
+        feedCollectionView.delegate = self
+        feedCollectionView.dataSource = self
+        
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.layer.borderWidth = 1
         profileImageView.clipsToBounds = true
@@ -39,9 +74,9 @@ class FeedTableViewCell: UITableViewCell {
             }
         })
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
-        feedImageView.isUserInteractionEnabled = true
+        feedCollectionView.isUserInteractionEnabled = true
         tapGesture.numberOfTapsRequired = 2
-        feedImageView.addGestureRecognizer(tapGesture)
+        feedCollectionView.addGestureRecognizer(tapGesture)
     }
     @objc func imageViewTapped(_ sender: UITapGestureRecognizer) {
         let str = likesLabel.text!

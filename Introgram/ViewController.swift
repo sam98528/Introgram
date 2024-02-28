@@ -48,9 +48,9 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         let tartget = feedList[indexPath.row]
         cell.profileNameLabel.text = tartget.writer
         cell.profileImageView.image = UIImage(named: tartget.writerImage)
-        cell.feedImageView.image = UIImage(named: tartget.imageName)
         cell.likesLabel.text = "좋아요 \(tartget.likes)개"
         cell.feedTextLabel.text = tartget.text
+        cell.feed = tartget
         highlightText(text: "I4E1_Official", inLabel: cell.feedTextLabel, shouldHighlight: true)
         
         func highlightText(text: String, inLabel label: UILabel, shouldHighlight: Bool) {
@@ -98,7 +98,7 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            return 2
+            return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

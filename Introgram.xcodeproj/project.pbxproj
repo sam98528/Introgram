@@ -28,6 +28,8 @@
 		14D4EBF32B8DE045008B605A /* SeunghyeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4EBF22B8DE045008B605A /* SeunghyeonViewController.swift */; };
 		14D4EBF52B8DE20F008B605A /* NaYeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4EBF42B8DE20F008B605A /* NaYeonViewController.swift */; };
 		14D4EBF72B8DE40A008B605A /* BM-JUA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14D4EBF62B8DE3A3008B605A /* BM-JUA.ttf */; };
+		14F0B4A72B8EE49800C17133 /* FeedPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0B4A52B8EE49800C17133 /* FeedPhotoCollectionViewCell.swift */; };
+		14F0B4A82B8EE49800C17133 /* FeedPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F0B4A62B8EE49800C17133 /* FeedPhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		14D4EBF22B8DE045008B605A /* SeunghyeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeunghyeonViewController.swift; sourceTree = "<group>"; };
 		14D4EBF42B8DE20F008B605A /* NaYeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaYeonViewController.swift; sourceTree = "<group>"; };
 		14D4EBF62B8DE3A3008B605A /* BM-JUA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BM-JUA.ttf"; sourceTree = "<group>"; };
+		14F0B4A52B8EE49800C17133 /* FeedPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		14F0B4A62B8EE49800C17133 /* FeedPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				14D4EBED2B8DD94B008B605A /* JuHyunViewController.swift */,
 				14D4EBEF2B8DDCB3008B605A /* MinHeeViewController.swift */,
 				146A6F722B8C817900567747 /* Main.storyboard */,
+				14F0B4A52B8EE49800C17133 /* FeedPhotoCollectionViewCell.swift */,
+				14F0B4A62B8EE49800C17133 /* FeedPhotoCollectionViewCell.xib */,
 				14D4EBEB2B8DD4E8008B605A /* Fonts */,
 				146A6F6C2B8C817900567747 /* AppDelegate.swift */,
 				146A6F6E2B8C817900567747 /* SceneDelegate.swift */,
@@ -278,6 +284,7 @@
 				14D4EBEC2B8DD526008B605A /* YES24.otf in Resources */,
 				146A6F792B8C817A00567747 /* LaunchScreen.storyboard in Resources */,
 				14D4EBF72B8DE40A008B605A /* BM-JUA.ttf in Resources */,
+				14F0B4A82B8EE49800C17133 /* FeedPhotoCollectionViewCell.xib in Resources */,
 				1492DE5B2B8D7C1400A3C3DA /* FeedTableViewCell.xib in Resources */,
 				146A6F762B8C817A00567747 /* Assets.xcassets in Resources */,
 				146A6F742B8C817900567747 /* Main.storyboard in Resources */,
@@ -308,6 +315,7 @@
 				146A6FA02B8C8BB300567747 /* CollectionViewCell.swift in Sources */,
 				1492DE5A2B8D7C1400A3C3DA /* FeedTableViewCell.swift in Sources */,
 				14D4EBF52B8DE20F008B605A /* NaYeonViewController.swift in Sources */,
+				14F0B4A72B8EE49800C17133 /* FeedPhotoCollectionViewCell.swift in Sources */,
 				146A6F712B8C817900567747 /* ViewController.swift in Sources */,
 				14D4EBEE2B8DD94B008B605A /* JuHyunViewController.swift in Sources */,
 				146A6F9D2B8C89AB00567747 /* Profile.swift in Sources */,
