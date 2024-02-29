@@ -15,7 +15,7 @@ class FeedTableViewCell: UITableViewCell , UICollectionViewDelegate,UICollection
     // CollectionView
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (feed?.imageName.count)!
+        return (feed!.imageName.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,7 +51,13 @@ class FeedTableViewCell: UITableViewCell , UICollectionViewDelegate,UICollection
     static func nib() -> UINib {
         return UINib(nibName: "FeedTableViewCell", bundle: nil)
     }
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        feedCollectionView.reloadData()
+        feedTextLabel.text = nil
+        heartImageView.image = UIImage(systemName: "heart")
+        heartImageView.tintColor = UIColor.black
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         

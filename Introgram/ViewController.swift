@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         tableView.register(FeedTableViewCell.nib(), forCellReuseIdentifier: FeedTableViewCell.identifier)
     }
 
-
+    
     
 }
 
@@ -51,7 +51,7 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         cell.likesLabel.text = "좋아요 \(tartget.likes)개"
         cell.feedTextLabel.text = tartget.text
         cell.feed = tartget
-        highlightText(text: "I4E1_Official", inLabel: cell.feedTextLabel, shouldHighlight: true)
+        highlightText(text: cell.feed!.writer, inLabel: cell.feedTextLabel, shouldHighlight: true)
         
         func highlightText(text: String, inLabel label: UILabel, shouldHighlight: Bool) {
             let attributedText = NSMutableAttributedString(string: label.text ?? "")
