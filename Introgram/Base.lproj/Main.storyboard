@@ -62,7 +62,7 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="q1b-XK-S3T" customClass="CollectionViewCell" customModule="Introgram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="-9" width="98" height="113"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmt-HM-Nsl">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmt-HM-Nsl">
                                             <rect key="frame" x="0.0" y="0.0" width="98" height="113"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="xat-OY-aiF">
@@ -99,6 +99,12 @@
                                                 <constraint firstItem="Ncj-Xz-loj" firstAttribute="leading" secondItem="Cmt-HM-Nsl" secondAttribute="leading" constant="14" id="zsy-ci-vOs"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="Cmt-HM-Nsl" firstAttribute="top" secondItem="q1b-XK-S3T" secondAttribute="topMargin" constant="-8" id="5gt-fY-etn"/>
+                                            <constraint firstItem="Cmt-HM-Nsl" firstAttribute="leading" secondItem="q1b-XK-S3T" secondAttribute="leadingMargin" constant="-8" id="Awp-6h-AuK"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Cmt-HM-Nsl" secondAttribute="trailing" constant="-8" id="BqK-1q-gMI"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Cmt-HM-Nsl" secondAttribute="bottom" constant="-8" id="T58-GH-JjW"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="xat-OY-aiF" id="EHv-LP-S2S"/>
                                             <outlet property="nameLabel" destination="Ncj-Xz-loj" id="0vC-Dy-thE"/>
@@ -270,19 +276,19 @@
                                     <rect key="frame" x="24" y="65" width="345" height="573"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iQ-Qe-6gY">
-                                            <rect key="frame" x="37.000000000000007" y="116" width="89.666666666666686" height="39"/>
+                                            <rect key="frame" x="37" y="116" width="85" height="39"/>
                                             <fontDescription key="fontDescription" name="YES24" family="YES24" pointSize="32"/>
                                             <color key="textColor" red="0.99512821439999999" green="0.90664631129999995" blue="0.081195063890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Birth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbD-di-P9s">
-                                            <rect key="frame" x="37" y="163" width="67" height="33"/>
+                                            <rect key="frame" x="37" y="163" width="57" height="33"/>
                                             <fontDescription key="fontDescription" name="YES24" family="YES24" pointSize="27"/>
                                             <color key="textColor" red="0.99512821439999999" green="0.90664631129999995" blue="0.081195063890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="MBTI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN0-e4-mwm">
-                                            <rect key="frame" x="36.999999999999993" y="204" width="71.333333333333314" height="33"/>
+                                            <rect key="frame" x="37.000000000000007" y="204" width="64.666666666666686" height="33"/>
                                             <fontDescription key="fontDescription" name="YES24" family="YES24" pointSize="27"/>
                                             <color key="textColor" red="0.99512821439999999" green="0.90664631129999995" blue="0.081195063890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
