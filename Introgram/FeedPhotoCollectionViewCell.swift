@@ -18,7 +18,7 @@ class FeedPhotoCollectionViewCell: UICollectionViewCell {
     }
     override func prepareForReuse() {
         super.prepareForReuse()
-
+        feedImageView.image = nil
             // 셀을 초기화 해주는 코드.
     }
     override func awakeFromNib() {
