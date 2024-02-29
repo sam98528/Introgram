@@ -20,6 +20,7 @@ class SeunghyeonViewController: UIViewController {
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     
+    
     let profile_1: Dictionary<String, String> =
     ["name": "신승현",
      "birth": "03. 13.",
@@ -30,7 +31,9 @@ class SeunghyeonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        view.addGestureRecognizer(panGesture)
+        
         profileCard.layer.cornerRadius = 30; // View의 모서리를 30만큼 둥글게
         image.layer.cornerRadius = 30; // UIImageView의 모서리를 30만큼 둥글게
         name.font = UIFont.boldSystemFont(ofSize: 32); // UILabel의 텍스트 크기와 굵기를 32로 설정
@@ -50,6 +53,13 @@ class SeunghyeonViewController: UIViewController {
     
     @IBAction func closeView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil);
+    }
+    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+        let velocity = gesture.velocity(in: view)
+        if velocity.y > 1000 {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     /*

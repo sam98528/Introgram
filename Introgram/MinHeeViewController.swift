@@ -26,11 +26,23 @@ class MinHeeViewController: UIViewController {
         coffee.image = UIImage(named: "coffee")
         disney.image = UIImage(named: "disney")
         
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        view.addGestureRecognizer(panGesture)
     }
 
 
     @IBAction func dismissButtonClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+        let velocity = gesture.velocity(in: view)
+        if velocity.y > 1000 {
+            dismiss(animated: true, completion: nil)
+        }
+                
+    }
+    
 }
 

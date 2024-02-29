@@ -28,8 +28,14 @@ class SeungwonViewController: UIViewController {
      "github": "https://github.com/sam98528",
      "sentence": "하기 싫은 걸 해야,\n하고 싶은 걸 한다."];
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        view.addGestureRecognizer(panGesture)
+        
+        
         let desiredColor = UIColor(hex: "#FEE715")
         profileCard.layer.cornerRadius = 30; // View의 모서리를 30만큼 둥글게
         profileCard.layer.borderWidth = 2.0
@@ -68,7 +74,15 @@ class SeungwonViewController: UIViewController {
         self.dismiss(animated: true, completion: nil);
     }
     
-
+    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+                let velocity = gesture.velocity(in: view)
+                // 제스처의 속도와 방향을 확인하여 화면을 dismiss합니다.
+                if velocity.y > 1000 {
+                    dismiss(animated: true, completion: nil)
+                }
+                
+    }
 
 }
 
